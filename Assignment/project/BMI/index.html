@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bmi-container">
+        <h2 class="bmi-title"> <span>Adult and Child BMI Calculator</span></h2>
+
+        <label for="age-group">Calculate BMI for</label>
+        <select id="age-group">
+            <option>Adult Age 20+</option>
+            <option>Child (2-19)</option>
+        </select>
+
+        <div class="input-group">
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight">
+
+        </div>
+
+        <div class="input-group">
+            <label for="height-feet">Height:</label>
+            <input type="text" id="height-feet">
+
+        </div>
+
+
+
+        <div class="buttons">
+            <button id="clear">Clear</button>
+            <button id="calculate">Calculate</button>
+            <div id="result"></div>
+        </div>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

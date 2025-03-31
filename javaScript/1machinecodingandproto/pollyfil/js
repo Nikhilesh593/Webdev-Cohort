@@ -1,0 +1,59 @@
+const arr = [2, 3, 5, 6, 7]
+
+
+//error map function not exit on arr variable machine coding round qsn ask like this
+
+if (!Array.prototype.myforeach) {
+    Array.prototype.myforeach = function (userfn) {
+        const orginalarr = this
+        for (let i = 0; i < orginalarr.length; i++) {
+            userfn(orginalarr[i], i)
+        }
+    }
+}
+
+arr.myforeach(function (vslue, index) {
+    console.log(`myforeach valu at index ${index} value is ${vslue}`);
+
+})
+
+
+//map 
+//sign return a new array
+//each element itirate and ,userfn according return new arr
+
+if (!Array.prototype.mymap) {
+    Array.prototype.mymap = function (userfn) {
+        const result = []
+        for (let i = 0; i < this.length; i++) {
+            const value = userfn(this[i], i);
+            result.push(value)
+        }
+        return result
+    }
+}
+
+const n = arr.mymap(e => e * 3)
+console.log(n);
+
+
+//filter
+//signature
+//return anew array,input userfn,
+//agar userfn tru then current valu include in new array
+
+if (!Array.prototype.myfilter) {
+    Array.prototype.myfilter = function (userfn) {
+
+        const result = []
+        for (let i = 0; i < this.length; i++) {
+            if (userfn(this[i])) {
+                result.push(this[i])
+            }
+        }
+        return result
+    }
+}
+
+const n3 = arr.myfilter((e) => e % 3 == 0)
+console.log(n3);
