@@ -4,15 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS</title>
     <style>
+        div {
+            border: 1px solid black;
+        }
 
+        .parent {
+            display: flex;
+            height: 250px;
+            justify-content: start;
+            align-items: start;
+            gap: 20px;
+            /* flex-wrap: wrap; */
+        }
+
+        .child {
+            height: 40pxpx;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
-    <p>this is css start</p>
-    <button style="background-color: yellow;">click me</button>
+    <div class="parent">
+        <div class="child">iteam 1</div>
+        <div class="child">iteam 2</div>
+        <div class="child">iteam 3</div>
+        <div class="child">iteam 4</div>
+
+    </div>
 </body>
 
 </html>
