@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="itm"></ul>
+    <script>
+        function rendertoscreen(obj) {
+            const dateadded = obj.data.dateModified
+            console.log(dateadded);
+
+        }
+        const items = document.getElementById("itm")
+        fetch("https://api.freeapi.app/api/v1/public/quotes/quote/random")
+            .then((response) =>
+                response.json())
+            .then(rendertoscreen)
+            .catch(() => { })
+            .finally(() => { })
+
+
+
+    </script>
+</body>
+
+</html>
