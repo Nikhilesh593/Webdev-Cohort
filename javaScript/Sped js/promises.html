@@ -8,23 +8,30 @@
 </head>
 
 <body>
-    <ul id="itm"></ul>
+    <ol id="itm"></ol>
     <script>
         function rendertoscreen(obj) {
-            const dateadded = obj.data.dateModified
-            console.log(dateadded);
+
+            const product = obj.data.data;
+            // console.log(product);
+
+            product.forEach((product) => {
+                const li = document.createElement('li');
+                li.innerText = product.title;
+                items.appendChild(li)
+
+            });
+
+
 
         }
         const items = document.getElementById("itm")
-        fetch("https://api.freeapi.app/api/v1/public/quotes/quote/random")
+        fetch("https://api.freeapi.app/api/v1/public/randomproducts?page=1&limit=10&inc=category%252Cprice%252Cthumbnail%252Cimages%252Ctitle%252Cid&query=mens-watches")
             .then((response) =>
                 response.json())
             .then(rendertoscreen)
-            .catch(() => { })
+            .catch((err) => { })
             .finally(() => { })
-
-
-
     </script>
 </body>
 
